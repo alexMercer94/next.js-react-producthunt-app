@@ -24,6 +24,22 @@ class Firebase {
             displayName: name,
         });
     }
+
+    /**
+     * Login a user
+     * @param {*} email Email
+     * @param {*} password Password
+     */
+    async login(email, password) {
+        return this.auth.signInWithEmailAndPassword(email, password);
+    }
+
+    /**
+     * Close user's session
+     */
+    async logout() {
+        await this.auth.signOut();
+    }
 }
 
 const firebase = new Firebase();

@@ -62,7 +62,7 @@ const CreateAccount = () => {
                         </Field>
                         {errors.name && <ErrorMsg>{errors.name}</ErrorMsg>}
                         <Field>
-                            <label htmlFor="email">Nombre</label>
+                            <label htmlFor="email">Email</label>
                             <input
                                 type="email"
                                 name="email"
