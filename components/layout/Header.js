@@ -17,7 +17,7 @@ const HeaderContainer = styled.div`
     }
 `;
 
-const Logo = styled.p`
+const Logo = styled.a`
     color: var(--naranja);
     font-size: 4rem;
     line-height: 0;
@@ -46,6 +46,7 @@ const Header = () => {
                     <Link href="/">
                         <Logo>P</Logo>
                     </Link>
+
                     <Search></Search>
                     <Nav></Nav>
                 </div>

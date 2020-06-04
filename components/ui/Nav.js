@@ -23,9 +23,17 @@ const Nav = () => {
 
     return (
         <Navigation>
-            <Link href="/">Inicio</Link>
-            <Link href="/populares">Populares</Link>
-            {user && <Link href="/new-product">Nuevo Producto</Link>}
+            <Link href="/">
+                <a>Inicio</a>
+            </Link>
+            <Link href="/populares">
+                <a>Populares</a>
+            </Link>
+            {user && (
+                <Link href="/new-product">
+                    <a>Nuevo Producto</a>
+                </Link>
+            )}
         </Navigation>
     );
 };
