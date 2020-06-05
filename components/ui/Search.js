@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+import Router from 'next/router';
 
 const InputText = styled.input`
     border: 1px solid var(--gris3);
@@ -28,13 +29,33 @@ const InputSumit = styled.button`
 `;
 
 const Search = () => {
+    const [search, setSearch] = useState('');
+
+    const searchProduct = (e) => {
+        e.preventDefault();
+
+        if (search.trim() === '') return;
+
+        Router.push({
+            pathname: '/search',
+            query: {
+                q: search,
+            },
+        });
+    };
+
     return (
         <form
             css={css`
                 position: relative;
             `}
+            onSubmit={searchProduct}
         >
-            <InputText type="text" placeholder="Buscar Productos"></InputText>
+            <InputText
+                type="text"
+                placeholder="Buscar Productos"
+                onChange={(e) => setSearch(e.target.value)}
+            ></InputText>
             <InputSumit type="submit">Buscar</InputSumit>
         </form>
     );
